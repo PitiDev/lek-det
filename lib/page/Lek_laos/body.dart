@@ -95,6 +95,7 @@ Widget myCard(){
       ListTile(
         leading: CircleAvatar(
           radius: 20,
+          backgroundImage: NetworkImage('https://www.clipartmax.com/png/middle/159-1598115_png-monkey-emoticon-12-cute-monkey-icon.png'),
         ),
         title: Text("553511"),
         subtitle: Text("ລີງ"),
