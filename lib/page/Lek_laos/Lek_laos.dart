@@ -16,7 +16,7 @@ class LekLaos extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.chevron_left, size: 50,),
           onPressed: (){
-           print("chevron pressed");
+           Navigator.pop(context);
           },
         ),
         backgroundColor: Color(0xFFb7c728),
