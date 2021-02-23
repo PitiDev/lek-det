@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lek_det/page/Lek_laos/Lek_laos.dart';
-import 'package:lek_det/page/Lek_laos/test.dart';
+import 'package:lek_det/pages/Lek_laos/Lek_laos.dart';
 
 class MyApp extends StatelessWidget {
   @override
