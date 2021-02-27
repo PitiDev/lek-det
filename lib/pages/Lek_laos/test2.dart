@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lek_det/pages/Lek_laos/components/card_with_lottery.dart';
 
 class Test1 extends StatefulWidget {
   @override
@@ -6,54 +7,33 @@ class Test1 extends StatefulWidget {
 }
 
 class _Test1State extends State<Test1> {
-  double width = 300;
-  double height = 400;
-  double changeX = 0;
-  double rotateX = 0;
-  double rotateY = 0;
-
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("animate container"),
+        title: Text("Test"),
       ),
-      body: Center(
+      body: Container(
+        width: size.width,
+        height: size.height,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedContainer(
-              transform: Matrix4.translationValues(changeX, 0, 0)..rotateX(rotateX)..rotateY(rotateY),
-              duration: Duration(milliseconds: 250),
-              width: width,
-              height: height,
-              decoration: BoxDecoration(color: Colors.blue),
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  height = height - 100;
-                  width = width - 100;
-                  changeX+=20;
-                  rotateX+=0.3;
-                  rotateY+=0.3;
-                });
-              },
-              child: Text("in"),
-              color: Colors.blueAccent,
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  height = height + 100;
-                  width = width + 100;
-                  changeX-=20;
-                  rotateX-=0.3;
-                  rotateY-=0.3;
-                });
-              },
-              child: Text("out"),
-              color: Colors.blueAccent,
-            )
+            Container(
+              width: size.width,
+                height: size.height * 0.6,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: PageView(
+              children: [
+                CardWithLottery(
+                ),
+                CardWithLottery(),
+                CardWithLottery(),
+              ],
+            ))
           ],
         ),
       ),

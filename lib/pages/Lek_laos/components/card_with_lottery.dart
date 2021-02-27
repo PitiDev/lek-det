@@ -8,10 +8,11 @@ import 'card_number.dart';
 import 'custom_divider.dart';
 import 'icon_with_circle.dart';
 
-
 class CardWithLottery extends StatelessWidget {
+  final int pageNum;
+  final int num;
   const CardWithLottery({
-    Key key,
+    Key key, this.pageNum, this.num,
   }) : super(key: key);
 
   @override
@@ -20,19 +21,18 @@ class CardWithLottery extends StatelessWidget {
     return Container(
       height: size.height * 0.6,
       width: size.width * 0.8,
-      margin: EdgeInsets.symmetric(vertical: kDefaultPadding,horizontal: kDefaultPadding),
+      margin: pageNum == num
+          ? EdgeInsets.symmetric(
+              vertical: kDefaultPadding, horizontal: kDefaultPadding)
+          : EdgeInsets.symmetric(vertical: 0, horizontal: 0),
       decoration: BoxDecoration(
           // color: Color(0xFFF9F8FD),
           color: Colors.white,
           borderRadius: BorderRadius.circular(30),
           boxShadow: [
             BoxShadow(
-              offset: Offset(0, 0),
-              blurRadius: 10,
-              color: Colors.black38
-            )
-          ]
-      ),
+                offset: Offset(0, 0), blurRadius: 10, color: Colors.black38)
+          ]),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -64,8 +64,3 @@ class CardWithLottery extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

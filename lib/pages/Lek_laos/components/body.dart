@@ -16,6 +16,9 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int pageChange = 0;
+    int num = 0;
+    var dates = ["20/2/2021", "21/2/2021", "22/2/2021"];
     return Background(
       child: Column(
         children: [
@@ -25,20 +28,33 @@ class _BodyState extends State<Body> {
           Center(
             child: SearchBox(
               onChanged: (value) {},
+              date: dates[pageChange],
             ),
           ),
           SizedBox(
             height: size.height * 0.04,
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Expanded(
+            child: PageView(
+              onPageChanged: (index){
+                setState(() {
+                  pageChange = index;
+                });
+                // print(dates[pageChange]);
+              },
               children: [
-                CardWithLottery(),
-                CardWithLottery(),
-                CardWithLottery(),
-                CardWithLottery(),
+                CardWithLottery(
+                  pageNum: pageChange,
+                  num: 0,
+                ),
+                CardWithLottery(
+                  pageNum: pageChange,
+                  num: 1,
+                ),
+                CardWithLottery(
+                  pageNum: pageChange,
+                  num: 2,
+                )
               ],
             ),
           )

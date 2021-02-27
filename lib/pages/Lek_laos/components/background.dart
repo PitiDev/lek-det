@@ -28,22 +28,22 @@ class Background extends StatelessWidget {
               )
             ]),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: size.height * 0.08,
-              width: size.width,
-              decoration: BoxDecoration(color: kPrimaryColor, boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, -10),
-                  blurRadius: 60,
-                  color: kPrimaryColor.withOpacity(0.4),
-                )
-              ]),
-            ),
-          ),
+          // Positioned(
+          //   bottom: 0,
+          //   left: 0,
+          //   right: 0,
+          //   child: Container(
+          //     height: size.height * 0.08,
+          //     width: size.width,
+          //     decoration: BoxDecoration(color: kPrimaryColor, boxShadow: [
+          //       BoxShadow(
+          //         offset: Offset(0, -10),
+          //         blurRadius: 60,
+          //         color: kPrimaryColor.withOpacity(0.4),
+          //       )
+          //     ]),
+          //   ),
+          // ),
           child,
         ],
       ),

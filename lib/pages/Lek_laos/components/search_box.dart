@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:lek_det/style/constants.dart';
 
-class SearchBox extends StatelessWidget {
+class SearchBox extends StatefulWidget {
   final ValueChanged<String> onChanged;
+  final String date;
 
   const SearchBox({
     Key key,
-    this.onChanged,
+    this.onChanged, this.date,
   }) : super(key: key);
+
+  @override
+  _SearchBoxState createState() => _SearchBoxState();
+}
+
+class _SearchBoxState extends State<SearchBox> {
+
+  @override
+  void initState(){
+    super.initState();
+    print(widget.date);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +36,9 @@ class SearchBox extends StatelessWidget {
                 offset: Offset(0, 2), blurRadius: 4, color: Colors.black45)
           ]),
       child: TextField(
-        onChanged: onChanged,
+        onChanged: widget.onChanged,
         decoration: InputDecoration(
-            hintText: "21 ກຸມພາ 2021",
+            hintText: "${widget.date}",
             hintStyle: TextStyle(
                 fontFamily: "NotoSansLao",
                 fontSize: 20,

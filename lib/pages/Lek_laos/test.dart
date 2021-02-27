@@ -34,49 +34,87 @@ class _TestState extends State<Test> {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: PageView(
-              onPageChanged: (index) {
-                setState(() {
-                  pageChange = index;
-                });
-                print(pageChange);
-              },
-              pageSnapping: true,
-              controller: pageController,
-              children: [
-                AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  margin: pageChange == 0
-                      ? EdgeInsets.all(0)
-                      : EdgeInsets.all(16),
-                  color: Colors.red,
-                ),
-                AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  margin: pageChange == 1
-                      ? EdgeInsets.all(0)
-                      : EdgeInsets.all(16),
-                  color: Colors.green,
-                ),
-                AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  margin: pageChange == 2
-                      ? EdgeInsets.all(0)
-                      : EdgeInsets.all(16),
-                  color: Colors.blue,
-                ),
-                AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  margin: pageChange == 3
-                      ? EdgeInsets.all(0)
-                      : EdgeInsets.all(16),
-                  color: Colors.pink,
-                ),
+             Expanded(
+               child: PageView(
+                onPageChanged: (index) {
+                  setState(() {
+                    pageChange = index;
+                  });
+                  print(pageChange);
+                },
+                pageSnapping: true,
+                controller: pageController,
+                children: [
+                  Container(
+                    margin: pageChange == 0 ?
+                    EdgeInsets.all(0) : EdgeInsets.all(10) ,
+                    width: 300,
+                    height: 300,
+                    color: Colors.pink,
+                    child: Column(
+                      children: [
+                        Text("hi"),
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: pageChange == 1 ?
+                    EdgeInsets.all(0) : EdgeInsets.all(10) ,
+                    width: 300,
+                    height: 300,
+                    color: Colors.red,
+                    child: Column(
+                      children: [
+                        Text("hi"),
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: pageChange == 2 ?
+                    EdgeInsets.all(0) : EdgeInsets.all(10) ,
+                    width: 300,
+                    height: 300,
+                    color: Colors.blue,
+                    child: Column(
+                      children: [
+                        Text("hi"),
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white
+                          ),
+                        ),
+                        SizedBox(height: 50,),
+                        Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.white
+                          ),
+                        ),
+                        Expanded(child: Container())
+                      ],
+                    ),
+                  ),
 
-              ],
+                ],
             ),
-          ),
+             ),
           Expanded(
               child: Container(
             child: Center(
