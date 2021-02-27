@@ -17,8 +17,11 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     int pageChange = 0;
-    int num = 0;
     var dates = ["20/2/2021", "21/2/2021", "22/2/2021"];
+
+    PageController pageController =
+        PageController(initialPage: 0, viewportFraction: 0.7);
+
     return Background(
       child: Column(
         children: [
@@ -34,33 +37,42 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: size.height * 0.04,
           ),
-          Expanded(
+          SizedBox(
+            width: size.width,
+            height: size.height * 0.6,
             child: PageView(
               onPageChanged: (index){
                 setState(() {
                   pageChange = index;
                 });
-                // print(dates[pageChange]);
+                print("$pageChange");
               },
+              controller: pageController,
               children: [
                 CardWithLottery(
-                  pageNum: pageChange,
+                  pageChagne: pageChange,
                   num: 0,
                 ),
                 CardWithLottery(
-                  pageNum: pageChange,
+                  pageChagne: pageChange,
                   num: 1,
                 ),
                 CardWithLottery(
-                  pageNum: pageChange,
+                  pageChagne: pageChange,
                   num: 2,
-                )
+                ),
+                CardWithLottery(
+                  pageChagne: pageChange,
+                  num: 3,
+                ),
               ],
             ),
           )
+          // SingleChildScrollView(
+          //   child: CardWithLottery(),
+          // )
         ],
       ),
     );
   }
 }
-

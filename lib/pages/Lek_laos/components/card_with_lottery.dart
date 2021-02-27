@@ -8,23 +8,28 @@ import 'card_number.dart';
 import 'custom_divider.dart';
 import 'icon_with_circle.dart';
 
-class CardWithLottery extends StatelessWidget {
-  final int pageNum;
+class CardWithLottery extends StatefulWidget {
+  final int pageChagne;
   final int num;
   const CardWithLottery({
-    Key key, this.pageNum, this.num,
+    Key key, this.pageChagne, this.num,
   }) : super(key: key);
 
+  @override
+  _CardWithLotteryState createState() => _CardWithLotteryState();
+}
+
+class _CardWithLotteryState extends State<CardWithLottery> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.6,
       width: size.width * 0.8,
-      margin: pageNum == num
+      margin: widget.pageChagne == widget.num
           ? EdgeInsets.symmetric(
-              vertical: kDefaultPadding, horizontal: kDefaultPadding)
-          : EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+              vertical: 0, horizontal: 0)
+          : EdgeInsets.symmetric(vertical: kDefaultPadding, horizontal: kDefaultPadding),
       decoration: BoxDecoration(
           // color: Color(0xFFF9F8FD),
           color: Colors.white,

@@ -9,6 +9,8 @@ class _TestState extends State<Test> {
   PageController pageController =
       PageController(initialPage: 0, viewportFraction: 0.7);
   int pageChange = 0;
+  double width = 200;
+  double height = 200;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +50,6 @@ class _TestState extends State<Test> {
                   Container(
                     margin: pageChange == 0 ?
                     EdgeInsets.all(0) : EdgeInsets.all(10) ,
-                    width: 300,
-                    height: 300,
                     color: Colors.pink,
                     child: Column(
                       children: [
@@ -67,8 +67,8 @@ class _TestState extends State<Test> {
                   Container(
                     margin: pageChange == 1 ?
                     EdgeInsets.all(0) : EdgeInsets.all(10) ,
-                    width: 300,
-                    height: 300,
+                    width: width,
+                    height: height,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -86,8 +86,8 @@ class _TestState extends State<Test> {
                   Container(
                     margin: pageChange == 2 ?
                     EdgeInsets.all(0) : EdgeInsets.all(10) ,
-                    width: 300,
-                    height: 300,
+                    width: width,
+                    height: height,
                     color: Colors.blue,
                     child: Column(
                       children: [
