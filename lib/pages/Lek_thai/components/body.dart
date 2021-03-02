@@ -1,13 +1,14 @@
 import 'dart:io';
 import 'dart:core';
 import 'package:flutter/material.dart';
+import 'package:lek_det/components/custom_button_circle.dart';
 import 'package:lek_det/pages/Lek_laos/components/card_laos.dart';
 import 'package:lek_det/components/page_view_indicator.dart';
 import 'package:lek_det/components/search_box.dart';
+import 'package:lek_det/pages/Lek_thai/components/card_thai.dart';
 import 'package:lek_det/style/constants.dart';
 
 import '../../../components/background.dart';
-import '../../../components/custom_button_circle.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -71,27 +72,31 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 },
                 controller: pageController,
                 children: [
-                  CardLaos(
-                    two_digit: "22",
-                    six_digit: "442232",
+                  CardThai(
+                    award_1: "553511",
+                    award_2: "553512",
+                    award_3: "553522",
                     pageChange: pageChange,
                     num: 0,
                   ),
-                  CardLaos(
-                    two_digit: "22",
-                    six_digit: "442232",
+                  CardThai(
+                    award_1: "553511",
+                    award_2: "553512",
+                    award_3: "553522",
                     pageChange: pageChange,
                     num: 1,
                   ),
-                  CardLaos(
-                    two_digit: "22",
-                    six_digit: "442232",
+                  CardThai(
+                    award_1: "553511",
+                    award_2: "553512",
+                    award_3: "553522",
                     pageChange: pageChange,
                     num: 2,
                   ),
-                  CardLaos(
-                    two_digit: "22",
-                    six_digit: "442232",
+                  CardThai(
+                    award_1: "553511",
+                    award_2: "553512",
+                    award_3: "553522",
                     pageChange: pageChange,
                     num: 3,
                   ),
@@ -99,9 +104,12 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             PageViewIndicator(size: size, dates: dates, pageChange: pageChange),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
@@ -145,15 +153,18 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                               children: [
                                 Text(
                                   "ປະຈໍາປີ",
-                                  style: TextStyle(fontSize: 30, fontFamily: "NotoSansLao"),
+                                  style: TextStyle(
+                                      fontSize: 30, fontFamily: "NotoSansLao"),
                                 ),
                                 Text(
                                   "ເດືອນ",
-                                  style: TextStyle(fontSize: 30, fontFamily: "NotoSansLao"),
+                                  style: TextStyle(
+                                      fontSize: 30, fontFamily: "NotoSansLao"),
                                 ),
                                 Text(
                                   "ງວດວັນທີ",
-                                  style: TextStyle(fontSize: 30, fontFamily: "NotoSansLao"),
+                                  style: TextStyle(
+                                      fontSize: 30, fontFamily: "NotoSansLao"),
                                 ),
                               ],
                             ),

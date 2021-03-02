@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lek_det/pages/Lek_laos/components/card_with_lottery.dart';
+import 'package:lek_det/pages/Lek_laos/components/card_laos.dart';
 
 class Test1 extends StatefulWidget {
   @override
@@ -28,10 +28,10 @@ class _Test1State extends State<Test1> {
                 ),
                 child: PageView(
               children: [
-                CardWithLottery(
+                CardLaos(
                 ),
-                CardWithLottery(),
-                CardWithLottery(),
+                CardLaos(),
+                CardLaos(),
               ],
             ))
           ],

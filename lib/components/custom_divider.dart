@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class myDivider extends StatelessWidget {
+class MyDivider extends StatelessWidget {
   final double _l;
   final double _r;
   final double _thickness;
 
-  const myDivider(
+  const MyDivider(
       this._l,
       this._r,
       this._thickness, {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lek_det/pages/Lek_laos/components/body.dart';
 import 'package:lek_det/pages/Lek_laos/components/build_appbar.dart';
 
-import 'components/background.dart';
+import '../../components/background.dart';
 
 class LekLaos extends StatelessWidget {
   @override

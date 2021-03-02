@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lek_det/style/constants.dart';
-import 'package:lek_det/page/Lek_laos/Lek_laos.dart';
+import 'package:lek_det/pages/Lek_laos/lek_laos_screen.dart';
 
 class RoundedBtnSubmit extends StatelessWidget {
   final Function press;
