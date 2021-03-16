@@ -4,7 +4,7 @@ import 'package:lek_det/pages/Lek_laos/components/title_animal.dart';
 import 'package:lek_det/pages/Lek_laos/components/title_animal.dart';
 import 'package:lek_det/style/constants.dart';
 
-import 'card_number.dart';
+import '../../../components/card_number.dart';
 import '../../../components/custom_divider.dart';
 import 'icon_with_circle.dart';
 
@@ -55,7 +55,7 @@ class _CardLaosState extends State<CardLaos> {
                       child: CircleIcon(0.06, 0.055, 30),
                     ),
                     SizedBox(height: size.height * 0.001),
-                    CardNumber(size: size, number: widget.two_digit,),
+                    CardNumber(number: widget.two_digit,),
                     SizedBox(height: size.height * 0.02),
                     MyDivider(0.25, 0.25, 1),
                     CustomNumber(
