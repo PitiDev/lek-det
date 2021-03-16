@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lek_det/pages/Lek_thai/components/build_appbar.dart';
+import 'package:lek_det/pages/Lek_vietnam//components/build_appbar.dart';
 import 'components/body.dart';
 
-class LekThai extends StatefulWidget {
+class LekVietnam extends StatefulWidget {
   @override
-  _LekThaiState createState() => _LekThaiState();
+  _LekVietnamState createState() => _LekVietnamState();
 }
 
-class _LekThaiState extends State<LekThai> {
+class _LekVietnamState extends State<LekVietnam> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

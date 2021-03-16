@@ -2,24 +2,19 @@ import 'package:flutter/material.dart';
 
 class CardNumber extends StatelessWidget {
   final String number;
-  const CardNumber({
-    Key key,
-    @required this.size, this.number,
-  }) : super(key: key);
 
-  final Size size;
+  const CardNumber({
+    this.number,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * 0.2,
-      height: size.height * 0.06,
+      width: 60,
+      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          width: 1,
-             color: Colors.black12
-        ),
+        border: Border.all(width: 1, color: Colors.black12),
         boxShadow: [
           BoxShadow(
             color: Colors.black45.withOpacity(0.2),

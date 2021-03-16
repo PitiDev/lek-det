@@ -15,10 +15,10 @@ class MyDate {
   }
   static List<MyDate> getMonths() {
     return <MyDate>[
-      MyDate(isSelected: false, buttonText: "ມ.ກ", text: "january"),
-      MyDate(isSelected: false, buttonText: "ກ.ພ", text: "february"),
-      MyDate(isSelected: false, buttonText: "ມ.ນ", text: "march"),
-      MyDate(isSelected: false, buttonText: "ມ.ສ", text: "april"),
+      MyDate(isSelected: false, buttonText: "ມ.ກ", text: "1"),
+      MyDate(isSelected: false, buttonText: "ກ.ພ", text: "2"),
+      MyDate(isSelected: false, buttonText: "ມ.ນ", text: "3"),
+      MyDate(isSelected: false, buttonText: "ມ.ສ", text: "4"),
     ];
   }
 

@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 
 
-class CustomButtonWithCircle extends StatelessWidget {
+class CustomButtonWithCircle extends StatefulWidget {
   final String text;
-  final Color color;
   final Function press;
+  final bool changeColor;
   const CustomButtonWithCircle({
     Key key,
-    this.text, this.color, this.press,
+    this.text, this.press, this.changeColor,
   }) : super(key: key);
 
+  @override
+  _CustomButtonWithCircleState createState() => _CustomButtonWithCircleState();
+}
+
+class _CustomButtonWithCircleState extends State<CustomButtonWithCircle> {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 15, left: 0),
       child: GestureDetector(
-        onTap: press,
+        onTap: widget.press,
         child: CircleAvatar(
           radius: 30,
-          backgroundColor: color,
+          backgroundColor: widget.changeColor ? Colors.orangeAccent : Colors.black12,
           child: Text(
-            text,
+            widget.text,
             style: TextStyle(color: Colors.black),
           ),
         ),

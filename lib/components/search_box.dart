@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lek_det/style/constants.dart';
-import 'package:lek_det/pages/Lek_laos/components/showbottom_sheet.dart';
+import 'package:lek_det/components/showbottom_sheet.dart';
 
 class SearchBox extends StatefulWidget {
   final ValueChanged<String> onChanged;

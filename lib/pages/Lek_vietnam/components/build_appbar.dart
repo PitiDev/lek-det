@@ -5,7 +5,7 @@ AppBar buildAppBar(BuildContext context){
   return AppBar(
     elevation: 0,
     title: Text(
-      "ຜົນອອກເລກໄທ",
+      "ຜົນອອກເລກຫວຽດນາມ",
       style: TextStyle(
           fontFamily: 'NotoSansLao',
           fontWeight: FontWeight.w300,

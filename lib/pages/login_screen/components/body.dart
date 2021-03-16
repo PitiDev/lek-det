@@ -6,7 +6,7 @@ import 'package:lek_det/pages/login_screen/components/rounded_btn_submit.dart';
 import 'package:lek_det/pages/login_screen/components/rounded_input_field.dart';
 import 'package:lek_det/pages/login_screen/components/rounded_password_field.dart';
 import 'card_custom_radius.dart';
-import 'forget_password.dart';
+import '../../../components/forget_password.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -39,6 +39,8 @@ class Body extends StatelessWidget {
               },
             ),
             ForgetPassword(
+              detailText: "ລືມລະຫັດຜ່ານ? ",
+              text: "ກົດທີ່ນີ້",
               press: (){},
             )
           ],
