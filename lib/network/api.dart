@@ -3,14 +3,13 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class Network {
-  final String _url = 'https://horesca.la/api/v1/';
+  final String _url = 'https://retechsole.com/lekdet_api/public/api/';
   var token;
   var lang;
 
   _getToken() async {
     SharedPreferences localStorage = await SharedPreferences.getInstance();
     token = localStorage.getString('access_token');
-    lang = localStorage.getString('LANG');
     //print('Token ============= +' + token);
   }
 
@@ -43,7 +42,7 @@ class Network {
 // List<dynamic> _data_leklao = [];
 //
 // void lekLao() async {
-//   final response = await Network().getData('mains');
+//   final response = await Network().getData('lek-thai');
 //   final body = json.decode(response.body);
 //   setState(() {
 //     _data_leklao = body['data'];
