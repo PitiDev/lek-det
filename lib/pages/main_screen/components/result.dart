@@ -21,14 +21,56 @@ class Result extends StatelessWidget {
               color: Colors.black45,
               blurRadius: 3,
             ),
-          ]
-      ),
+          ]),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("ຜົນອອກເລກ", style: TextStyle(fontSize: 30, fontFamily: "NotoSansLao"),),
-            Text("ລາວ,ໄທ,ຫວຽດນາມ", style: TextStyle(fontSize: 16, fontFamily: "NotoSansLao", color: Colors.black45),),
+            Text(
+              "ຜົນອອກເລກ",
+              style: TextStyle(fontSize: 30, fontFamily: "NotoSansLao"),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/lek-lao');
+                  },
+                  child: Text(
+                    "ລາວ",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: "NotoSansLao",
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/lek-thai');
+                  },
+                  child: Text(
+                    "ໄທ",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: "NotoSansLao",
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/lek-vietnam');
+                  },
+                  child: Text(
+                    "ຫວຽດນາມ",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: "NotoSansLao",
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
