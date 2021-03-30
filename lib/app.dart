@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
       ),
       home: LogInScreen(),
       routes: [
-        '/lek-lao',
+        '/lek-lao': (ctx) => LekLaos(),
+        '/lek-thai': (ctx) => LekThai(),
+        '/lek-vietnam': (ctx) => LekVietnam(),
       ],
     );
   }
