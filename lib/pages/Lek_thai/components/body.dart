@@ -17,20 +17,22 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
+  List<int> revertPage = [3, 2, 1, 0];
+
   var dates = [
     "21 ກຸມພາ 2021",
     "22 ກຸມພາ 2021",
     "22 ກຸມພາ 2021",
     "23 ກຸມພາ 2021"
   ];
-  int pageChange = 0;
+  int currentPage = 0;
 
   List<MyDate> years;
   List<MyDate> months;
   List<MyDate> mydate;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     years = MyDate.getYears();
     months = MyDate.getMonths();
@@ -42,7 +44,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
     Size size = MediaQuery.of(context).size;
 
     PageController pageController =
-        PageController(initialPage: 0, viewportFraction: 0.7);
+    PageController(initialPage: 0, viewportFraction: 0.85);
 
     return Background(
       child: SafeArea(
@@ -54,7 +56,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             Center(
               child: SearchBox(
                 onChanged: (value) {},
-                date: dates[pageChange],
+                date: dates[currentPage],
                 pressCalendar: () {
                   _showBottomSheet(size);
                 },
@@ -69,39 +71,40 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             Expanded(
               child: PageView(
                 onPageChanged: (index) {
-                  print('page changed: $index');
+                  print('currentPage: $index');
                   setState(() {
-                    pageChange = index;
+                    currentPage = index;
                   });
                 },
+                reverse: true,
                 controller: pageController,
                 children: [
                   CardThai(
                     award_1: "553511",
                     award_2: "553512",
                     award_3: "553522",
-                    pageChange: pageChange,
+                    pageChange: currentPage,
                     num: 0,
                   ),
                   CardThai(
                     award_1: "553511",
                     award_2: "553512",
                     award_3: "553522",
-                    pageChange: pageChange,
+                    pageChange: currentPage,
                     num: 1,
                   ),
                   CardThai(
                     award_1: "553511",
                     award_2: "553512",
                     award_3: "553522",
-                    pageChange: pageChange,
+                    pageChange: currentPage,
                     num: 2,
                   ),
                   CardThai(
                     award_1: "553511",
                     award_2: "553512",
                     award_3: "553522",
-                    pageChange: pageChange,
+                    pageChange: currentPage,
                     num: 3,
                   ),
                 ],
@@ -110,7 +113,15 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             SizedBox(
               height: 10,
             ),
-            PageViewIndicator(size: size, dates: dates, pageChange: pageChange),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                4,
+                    (index) => buildDot(
+                  index: revertPage[index],
+                ),
+              ),
+            ),
             SizedBox(
               height: 10,
             ),
@@ -124,9 +135,21 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return ShowBottomSheet(years: years,months: months,dates: mydate);
+        return ShowBottomSheet(years: years, months: months, dates: mydate);
       },
     );
   }
-}
 
+  AnimatedContainer buildDot({int index}) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 400),
+      margin: EdgeInsets.only(right: 5),
+      height: currentPage == index ? 20 : 10,
+      width: currentPage == index ? 20 : 10,
+      decoration: BoxDecoration(
+        color: currentPage == index ? kPrimaryColor : Color(0xFFD8D8D8),
+        borderRadius: BorderRadius.circular(30),
+      ),
+    );
+  }
+}
