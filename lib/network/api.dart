@@ -45,6 +45,6 @@ class Network {
 //   final response = await Network().getData('lek-thai');
 //   final body = json.decode(response.body);
 //   setState(() {
-//     _data_leklao = body['data'];
+//     _data_leklao = body['response']['prizes'];
 //   });
 // }
